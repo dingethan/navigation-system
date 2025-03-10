@@ -3,6 +3,7 @@
 #include<vector>
 #include<random>
 #include<cmath>
+#include <algorithm> // 添加此行
 using namespace std;
 struct Point {
     double x;
@@ -88,7 +89,7 @@ vector<int> query_neighbors(const Point& p, int k) {
         for (int dc = -1; dc <= 1; dc++) {
             int r = row + dr;
             int c = col + dc;
-            if (r >= 0 && r < rows && c >= 0 && c << cols) {
+            if (r >= 0 && r < rows && c >= 0 && c < cols) {
                 candidates.insert(candidates.end(), grid[r][c].begin(), grid[r][c].end());
             }
         }
@@ -103,7 +104,7 @@ vector<int> query_neighbors(const Point& p, int k) {
         return (dx1 * dx1 + dy1 * dy1) < (dx2 * dx2 + dy2 * dy2);
         });
 
-    if (candidates.size() > k) candidates.resize(k);
+    if (candidates.size() > static_cast<size_t>(k)) candidates.resize(k);
     return candidates;
 }
 };
