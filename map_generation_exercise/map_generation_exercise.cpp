@@ -8,6 +8,7 @@ using namespace std;
 struct Point {
     double x;
     double y;
+
 };
 
 struct Edge {
@@ -139,7 +140,6 @@ int main()
     for (auto& p : points) {
         out << p.x << " " << p.y << endl;
     }
-    cout << "Map data saved to map_data.txt" << endl;
 
     return 0;
 }
