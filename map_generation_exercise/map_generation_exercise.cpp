@@ -104,9 +104,11 @@ vector<int> query_neighbors(const Point& p, int k) {
         return (dx1 * dx1 + dy1 * dy1) < (dx2 * dx2 + dy2 * dy2);
         });
 
+
     if (candidates.size() > static_cast<size_t>(k)) candidates.resize(k);
     return candidates;
 }
+
 };
 
 
@@ -137,6 +139,7 @@ int main()
     for (auto& p : points) {
         out << p.x << " " << p.y << endl;
     }
+    cout << "Map data saved to map_data.txt" << endl;
 
     return 0;
 }
